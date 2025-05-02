@@ -1,150 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Employer Portal | TrabaHope</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
   <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
     body {
       font-family: 'Poppins', sans-serif;
-      background: #f4f8fb;
-      margin: 0;
-      padding: 0;
+      background: #f2f6ff;
       color: #333;
     }
-
     header {
       background: #1a57d9;
       color: white;
       padding: 20px 40px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
-    h1 {
-      margin: 0;
-      font-size: 32px;
+    header .branding {
+      font-size: 22px;
+      font-weight: 600;
     }
-
+    header .email {
+      font-size: 14px;
+    }
     .container {
-      max-width: 800px;
+      max-width: 600px;
       margin: 40px auto;
       background: white;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-
-    .container h2 {
+    h2 {
       color: #1a57d9;
       margin-bottom: 20px;
+      text-align: center;
     }
-
-    form label {
+    label {
       display: block;
       margin-bottom: 10px;
       font-weight: 500;
     }
-
-    form input,
-    form textarea,
-    form select {
+    input, textarea, select {
       width: 100%;
       padding: 10px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 6px;
-      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
     }
-
     button {
       background: #1a57d9;
       color: white;
-      border: none;
       padding: 10px 20px;
+      border: none;
       border-radius: 6px;
+      font-size: 16px;
       cursor: pointer;
-      font-weight: 600;
     }
-
     button:hover {
-      background: #1548b2;
+      background: #0f3d9c;
     }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      color: #888;
+    footer {
       margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Employer Portal</h1>
-    <p>Post Jobs & Connect with Job Seekers</p>
+    <div class="branding">TrabaHope | TAGAHIRE SOLUTIONS</div>
+    <div class="email">📧 TrabahopeTHSolution@gmail.com</div>
   </header>
 
   <div class="container">
-    <h2>Post a Job</h2>
-    <form id="jobPostForm">
-      <label>Company Name:
-        <input type="text" name="company" required>
-      </label>
+    <h2>Post a Job Opening</h2>
+    <form name="jobPostForm" method="POST" onsubmit="submitForm(event)">
+      <label>Company Name</label>
+      <input type="text" name="company" required />
 
-      <label>Job Title:
-        <input type="text" name="jobTitle" required>
-      </label>
+      <label>Job Title</label>
+      <input type="text" name="title" required />
 
-      <label>Job Location:
-        <input type="text" name="location" required>
-      </label>
+      <label>Job Location</label>
+      <input type="text" name="location" required />
 
-      <label>Type:
-        <select name="type" required>
-          <option value="Full Time">Full Time</option>
-          <option value="Part Time">Part Time</option>
-          <option value="Contract">Contract</option>
-          <option value="Remote">Remote</option>
-        </select>
-      </label>
+      <label>Employment Type</label>
+      <select name="type" required>
+        <option value="">Select</option>
+        <option>Full-Time</option>
+        <option>Part-Time</option>
+        <option>Contract</option>
+        <option>Temporary</option>
+      </select>
 
-      <label>Requirements:
-        <textarea name="requirements" rows="3" required></textarea>
-      </label>
+      <label>Requirements</label>
+      <textarea name="requirements" rows="4" required></textarea>
 
-      <label>Benefits:
-        <textarea name="benefits" rows="3"></textarea>
-      </label>
+      <label>Contact Info (Phone/Email)</label>
+      <input type="text" name="contact" required />
 
-      <label>Contact Email:
-        <input type="email" name="email" required>
-      </label>
-
-      <button type="submit">Submit Job</button>
+      <button type="submit">Submit Job Posting</button>
     </form>
   </div>
 
-  <div class="footer">
-    &copy; 2025 TrabaHope | Empowering Local Employment
-  </div>
+  <footer>
+    &copy; 2025 TrabaHope | TagaHire Solutions. All rights reserved.
+  </footer>
 
   <script>
-    document.getElementById('jobPostForm').addEventListener('submit', function (e) {
+    function submitForm(e) {
       e.preventDefault();
-
-      const formData = new FormData(e.target);
-      const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-
-      fetch(scriptURL, {
-        method: 'POST',
-        body: formData
+      const form = e.target;
+      const data = new FormData(form);
+      fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec", {
+        method: "POST",
+        body: data
       })
-      .then(response => alert('Job posted successfully!'))
-      .catch(error => alert('Error submitting form. Please try again.'));
-
-      e.target.reset();
-    });
+      .then(response => {
+        alert("Job posted successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Error! Try again.");
+        console.error("Error:", error);
+      });
+    }
   </script>
+
 </body>
 </html>
