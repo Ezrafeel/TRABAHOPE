@@ -118,24 +118,28 @@
   </footer>
 
   <script>
-    function submitForm(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      fetch("https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec", {
-        method: "POST",
-        body: data
-      })
-      .then(response => {
+  function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    fetch("https://script.google.com/macros/s/AKfycbypTkVH3ixtXiH5MzMnwoocxcHLbGnudFauhTypWZGC7XdEwqZq5lOpCBnuVqwdMN2F/exec", {
+      method: "POST",
+      body: data
+    })
+    .then(response => {
+      if (response.ok) {
         alert("Job posted successfully!");
         form.reset();
-      })
-      .catch(error => {
-        alert("Error! Try again.");
-        console.error("Error:", error);
-      });
-    }
-  </script>
+      } else {
+        alert("Error posting job. Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Network error! Please check your internet or try again.");
+      console.error("Error:", error);
+    });
+  }
+</script>
 
 </body>
 </html>
