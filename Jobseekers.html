@@ -195,55 +195,89 @@
     <h1>We Find People. You Find Work.</h1>
   </div>
 
-  <div class="section">
-    <h2>Available Job Listings</h2>
+ <div class="section">
+  <h2>Available Job Listings</h2>
 
-    <div class="job-card" onclick="toggleDetails(this)">
-      <div class="job-title">Construction Assistant</div>
-      <div class="job-summary">Local construction firm | Full time | Toledo City</div>
-      <div class="job-details">
-        <p><strong>Requirements:</strong> No experience required. Must be physically fit.</p>
-        <p><strong>Benefits:</strong> Daily wage, tools provided, on-the-job training.</p>
-        <button onclick="openForm(event, 'Construction Assistant')">Apply</button>
-      </div>
-    </div>
-
-    <div class="job-card" onclick="toggleDetails(this)">
-      <div class="job-title">Retail Store Cashier</div>
-      <div class="job-summary">Convenience Store | Shift-based | Toledo City</div>
-      <div class="job-details">
-        <p><strong>Requirements:</strong> High school graduate, basic math skills.</p>
-        <p><strong>Benefits:</strong> Night differential, friendly work environment.</p>
-        <button onclick="openForm(event, 'Retail Store Cashier')">Apply</button>
-      </div>
-    </div>
-
-    <div class="job-card" onclick="toggleDetails(this)">
-      <div class="job-title">Delivery Driver (Motorcycle)</div>
-      <div class="job-summary">Logistics Partner | Flexible hours | Barangay-based</div>
-      <div class="job-details">
-        <p><strong>Requirements:</strong> Valid license, own motorcycle, smartphone.</p>
-        <p><strong>Benefits:</strong> Per delivery rate, fuel subsidy, incentives.</p>
-        <button onclick="openForm(event, 'Delivery Driver')">Apply</button>
-      </div>
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Construction Assistant</div>
+    <div class="job-summary">Local construction firm | Full time | Toledo City</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> No experience required. Must be physically fit.</p>
+      <p><strong>Benefits:</strong> Daily wage, tools provided, on-the-job training.</p>
+      <button onclick="openForm(event, 'Construction Assistant')">Apply</button>
     </div>
   </div>
 
-  <!-- Application Form Modal -->
-  <div id="applicationModal">
-    <div class="modal-content">
-      <h3>Job Application</h3>
-      <p id="jobTitleText" style="margin-bottom: 15px; color:#1a57d9; font-weight:600;"></p>
-      <form id="applicationForm">
-        <label>Name:<br><input type="text" name="name" required /></label><br>
-        <label>Age:<br><input type="number" name="age" required /></label><br>
-        <label>Phone:<br><input type="tel" name="phone" required /></label><br>
-        <label>Why are you applying?<br><textarea name="reason" rows="3" required></textarea></label><br>
-        <button type="submit" class="submit-btn">Submit</button>
-        <button type="button" class="cancel-btn" onclick="closeForm()">Cancel</button>
-      </form>
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Retail Store Cashier</div>
+    <div class="job-summary">Convenience Store | Shift-based | Toledo City</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> High school graduate, basic math skills.</p>
+      <p><strong>Benefits:</strong> Night differential, friendly work environment.</p>
+      <button onclick="openForm(event, 'Retail Store Cashier')">Apply</button>
     </div>
   </div>
+
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Delivery Driver (Motorcycle)</div>
+    <div class="job-summary">Logistics Partner | Flexible hours | Barangay-based</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> Valid license, own motorcycle, smartphone.</p>
+      <p><strong>Benefits:</strong> Per delivery rate, fuel subsidy, incentives.</p>
+      <button onclick="openForm(event, 'Delivery Driver')">Apply</button>
+    </div>
+  </div>
+
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Fastfood Restaurant Service Crew</div>
+    <div class="job-summary">Fastfood Chain | Part Time - Shift | Toledo City</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> High School Graduate, must be friendly and punctual.</p>
+      <p><strong>Benefits:</strong> Meal allowance, training provided, weekend bonus.</p>
+      <button onclick="openForm(event, 'Fastfood Restaurant Service Crew')">Apply</button>
+    </div>
+  </div>
+
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Warehouse Assistant</div>
+    <div class="job-summary">Supply Depot | Full Time | Minglanilla</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> Male, able to lift heavy loads, honest and punctual.</p>
+      <p><strong>Benefits:</strong> Regular hours, overtime pay, monthly bonuses.</p>
+      <button onclick="openForm(event, 'Warehouse Assistant')">Apply</button>
+    </div>
+  </div>
+
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Janitorial Staff</div>
+    <div class="job-summary">Commercial Building | Morning Shift | Toledo City</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> With or without experience, male or female.</p>
+      <p><strong>Benefits:</strong> Uniform provided, government benefits included.</p>
+      <button onclick="openForm(event, 'Janitorial Staff')">Apply</button>
+    </div>
+  </div>
+
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Security Guard</div>
+    <div class="job-summary">Mall Complex | Night Shift | Toledo City</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> With license, at least 5'5", alert and courteous.</p>
+      <p><strong>Benefits:</strong> Hazard pay, night differential, free uniform.</p>
+      <button onclick="openForm(event, 'Security Guard')">Apply</button>
+    </div>
+  </div>
+
+  <div class="job-card" onclick="toggleDetails(this)">
+    <div class="job-title">Office Clerk</div>
+    <div class="job-summary">Construction Office | 8AM–5PM | Toledo City</div>
+    <div class="job-details">
+      <p><strong>Requirements:</strong> Female, computer literate, organized.</p>
+      <p><strong>Benefits:</strong> Government-mandated benefits, weekend off.</p>
+      <button onclick="openForm(event, 'Office Clerk')">Apply</button>
+    </div>
+  </div>
+</div>
 
   <footer>
     &copy; 2025 TrabaHope | TagaHire Solution. All rights reserved.
