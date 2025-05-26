@@ -119,23 +119,26 @@
 
   <script>
   function submitForm(e) {
-    e.https://formspree.io/f/xkgrlqzd();
+    e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
     fetch("https://script.google.com/macros/s/AKfycbypTkVH3ixtXiH5MzMnwoocxcHLbGnudFauhTypWZGC7XdEwqZq5lOpCBnuVqwdMN2F/exec", {
       method: "POST",
       body: data
-    }) <input type="jomareencabo969@gmail.com" name="jomareencabo969@gmail.com" placeholder="jomareencabo969@gmail.com">
+    })
     .then(response => {
       if (response.ok) {
         alert("Job posted successfully!");
         form.reset();
-     
-    <div class="container">
-    <h2>Post a Job Opening</h2>
-    <form name="jobPostForm" method="POST" onsubmit="submitForm(event)">
-      <label>Company Name</label>
-      <input type="text" name="company" required />
+      } else {
+        alert("Error posting job. Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Network error! Please check your internet or try again.");
+      console.error("Error:", error);
+    });
+  }
 </script>
 
 </body>
