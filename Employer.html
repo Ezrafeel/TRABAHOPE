@@ -122,29 +122,21 @@
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-   <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xkgrlqzd"
-  method="POST"
->
-  <label>
-    Your email:jomareencabo969@gmai.com
-    <input type="jomareencabo969@gmai.com" name="jomareencabo969@gmai.com">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
+    fetch("https://script.google.com/macros/s/AKfycbypTkVH3ixtXiH5MzMnwoocxcHLbGnudFauhTypWZGC7XdEwqZq5lOpCBnuVqwdMN2F/exec", {
+      method: "POST",
+      body: data
     })
     .then(response => {
       if (response.ok) {
         alert("Job posted successfully!");
         form.reset();
-        back to main page
-      
+      } else {
+        alert("Error posting job. Please try again.");
+      }
+    })
+    .catch(error => {
+      alert("Network error! Please check your internet or try again.");
+      console.error("Error:", error);
     });
   }
 </script>
